@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from '../utils/axiosWithAuth.js';
+import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 
 
 class LoginForm extends React.Component {
@@ -14,17 +14,36 @@ class LoginForm extends React.Component {
 
     handleChange = e => {
         this.setState({
-            ...this.state.credentials,
+            credentials: {
+
+                ...this.state.credentials,
             [e.target.name] : e.target.value 
+
+            }
+            
         });
     };
+
+    login = e => {
+        e.preventDefault();
+
+        axiosWithAuth()
+            .post('/login', this.state.credentials)
+            .then(res => {
+                localStorage.getItem('token', res.data.payload);
+                this.props.history.push('/protected');
+            })
+
+            .catch(error => console.log(error));
+            
+    }
 
 
 
     render() {
         return(
             <div>
-                <form>
+                <form onSubmit={this.login}>
                     <input  type="text"
                             name="username"
                             placeholder="UserName"
@@ -35,7 +54,7 @@ class LoginForm extends React.Component {
                     <input  type="password"
                             name="password"
                             placeholder="Password"
-                            value={this.state.credentials.username}
+                            value={this.state.credentials.password}
                             onChange={this.handleChange}
                              />
                     <button>Log in</button>
