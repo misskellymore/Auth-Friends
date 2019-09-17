@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
             .post('/login', this.state.credentials)
             .then(res => {
                 localStorage.getItem('token', res.data.payload);
-                this.props.history.push('/protected');
+                // this.props.history.push('/protected');
             })
 
             .catch(error => console.log(error));

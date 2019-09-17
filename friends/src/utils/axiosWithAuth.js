@@ -10,3 +10,6 @@ export const axiosWithAuth = () => {
         }
     })
 }
+
+
+// The creat function creates a new instance of axios with a custom configuration 
