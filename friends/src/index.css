@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 1rem;
+  
+  
+}
+
+input{
+  padding: 1rem;  
+  margin-right: .5rem;
+  
+}
+
+button {
+  width: 8rem;
+}
+
+html { 
+  background: url(https://img.buzzfeed.com/buzzfeed-static/static/2018-09/24/8/asset/buzzfeed-prod-web-02/anigif_sub-buzz-2655-1537793305-5.gif?downsize=700:*&output-format=auto&output-quality=auto) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
